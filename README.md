@@ -63,6 +63,7 @@ The results (Steps to goal (SG), Rewards, Convergence) of any experiment are sto
 Example: _python processing.py 5000 500 500 20 small_ <br /><br />
 
 Your processed output will be stored inside the "Main/ProcessedOutput" folder in .csv format. Example output files are: ProcessedSG.csv, ProcessedReward.csv, ProcessedConvergence.csv<br /><br />
+
 2. Then one-by-one run "Main/graph_SG.py", "Main/graph_reward.py", "Main/graph_convergence.py" through below example steps.<br /><br />
 	a. Open Main/graph_SG.py and edit line 48-55 as per your experiment and graph generation preferences<br />
 	b. run _python graph_SG.py episode_num gap env_type_   (example: _python graph_SG.py 5000 500 small_)<br /><br />
@@ -73,6 +74,7 @@ Your processed output will be stored inside the "Main/ProcessedOutput" folder in
 	
 	
 Your output graphs will be stored in "Main/SG.pdf", "Main/Reward.pdf", "Main/Convergence.pdf" <br /><br />
+
 3. For convenience, we include a "ProcessedFiles" folder that is already populated by the results of our experiments.<br />
 Processed outputs are already in the "ProcessedFiles/ProcssedOutput" folder.<br /><br />
 Simply, run the following commands from **./ProcessedFiles folder** to see the graphs we have included in our paper<br/>
