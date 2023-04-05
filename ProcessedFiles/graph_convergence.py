@@ -83,7 +83,7 @@ for i in range(len(AttackPercentage)):
 
 
 ## Make sure path exists for this one line of code #################################
-plt.savefig('./fig4(a)part_Convergence.pdf',bbox_inches='tight') 
+plt.savefig('./Convergence.pdf',bbox_inches='tight') 
 ################################################################################
 
 plt.show()
