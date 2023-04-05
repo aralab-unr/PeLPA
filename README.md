@@ -41,8 +41,6 @@ Example:<br />
 
 python RandomInit.py 15 20 5 2000 10 0.90 20 on 2 random <br />
 python PeLPA.py 15 20 5 2000 10 0.90 20 on 2 random large <br />
-
-<br /><br />
          
 However, it might take a long time until all the experiments are completed. 
 It may be of interest to run more than one algorithm at the same time if you have enough computing power. 
