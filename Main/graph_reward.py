@@ -79,7 +79,7 @@ for i in range(len(AttackPercentage)):
 		axList[j][0].text(0.5, -0.35, labelList[j], transform=axList[j][0].transAxes + trans)
 
 ## Make sure path exists for this one line of code #################################
-plt.savefig('./fig3b_Reward.pdf',bbox_inches='tight') 
+plt.savefig('./fReward.pdf',bbox_inches='tight') 
 ################################################################################
 plt.show()
 

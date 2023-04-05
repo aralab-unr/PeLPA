@@ -81,7 +81,7 @@ for i in range(len(AttackPercentage)):
         axList[j][0].set_title(str(envType), loc="right" )
 
 ## Make sure path exists for this one line of code #################################
-plt.savefig('./fig3a_SG.pdf',bbox_inches='tight') 
+plt.savefig('./SG.pdf',bbox_inches='tight') 
 ################################################################################
 
 plt.show()
