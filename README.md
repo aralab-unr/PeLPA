@@ -10,6 +10,7 @@ Cooperative Multiagent Reinforcement Learning (CMARL) has gained popularity in s
 
 ![Fig.1 in the paper showing the basic adversarial manipulation in multiagent learning](https://github.com/aralab-unr/PeLPA/blob/main/poisoning_basic.svg)
 
+![Fig.2 in the paper showing the threat model for proposed PeLPA method](https://github.com/aralab-unr/PeLPA/blob/main/poisoning_framework.svg)
 
 ## Files
 The folder **Main** contains our implementation of all algorithms and experiments
@@ -40,10 +41,10 @@ Et: Environment type [small, medium, large] <br />
 
 <br />
 Example:<br />
-
+```
 python RandomInit.py 15 20 5 2000 10 0.90 20 on 2 random <br />
 python PeLPA.py 15 20 5 2000 10 0.90 20 on 2 random large <br />
-         
+```      
 However, it might take a long time until all the experiments are completed. 
 It may be of interest to run more than one algorithm at the same time if you have enough computing power. 
 Also, note that, for each framework, if the agents do not attain goal within (GridSize*100) steps in a particular episode, the episode and environment will be reset to the next. <br /><br />
@@ -60,7 +61,8 @@ The results (Steps to goal (SG), Rewards, Convergence) of any experiment are sto
 		reward_gap = plotting gap between Reward values<br />
     conv_gap = plotting gap between Convergence values<br />
     env_type = environment type [Option: small/medium/large]<br />
-Example: _python processing.py 5000 500 500 20 small_ <br /><br />
+Example: 
+```python processing.py 5000 500 500 20 small``` <br /><br />
 
 Your processed output will be stored inside the "Main/ProcessedOutput" folder in .csv format. Example output files are: ProcessedSG.csv, ProcessedReward.csv, ProcessedConvergence.csv<br /><br />
 
