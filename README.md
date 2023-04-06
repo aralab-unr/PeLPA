@@ -6,7 +6,9 @@ This is the codification used in the ICMLC 2023 paper proposing PeLPA framework 
 This project was built on Python 3.8. All the experiments are executed in the modified Predator-Prey (PP) domain, we included the version we used in the **Main/PP_environment** folder (slightly different from the standard PP domain). For the graph generation code you will need to install Jupyter Notebook (http://jupyter.readthedocs.io/en/latest/install.html).
 
 ## Abstract
-Cooperative Multiagent Reinforcement Learning (CMARL) has gained popularity in solving complex tasks through cooperation and collaboration of the participating agents in a complex environment. However, since CMARL may involve confidential client information, Differential Privacy (DP) has been proposed to secure it from adversarial inference. Nonetheless, the additional DP-noise creates a new threat for knowledge poisoning attacks in CMARL, which has not been extensively studied in the literature. To address this gap, we propose an adaptive knowledge poisoning technique that an attacker can use to exploit the additional DP-noise, evade state-of-the-art anomaly detection techniques, and prevent optimal convergence of the CMARL model. We evaluate our attack on state-of-the-art anomaly detection approaches in terms of detection accuracy and validation loss. 
+Cooperative Multiagent Reinforcement Learning (CMARL) has gained popularity in solving complex tasks through cooperation and collaboration of the participating agents in a complex environment. However, since CMARL may involve confidential client information, Differential Privacy (DP) has been proposed to secure it from adversarial inference. Nonetheless, the additional DP-noise creates a new threat for knowledge poisoning attacks in CMARL, which has not been extensively studied in the literature. To address this gap, we propose an adaptive knowledge poisoning technique that an attacker can use to exploit the additional DP-noise, evade state-of-the-art anomaly detection techniques, and prevent optimal convergence of the CMARL model. We evaluate our attack on state-of-the-art anomaly detection approaches in terms of detection accuracy and validation loss. <br />
+
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
 
 
 ## Files
@@ -76,11 +78,11 @@ Your output graphs will be stored in "Main/SG.pdf", "Main/Reward.pdf", "Main/Con
 3. For convenience, we include a "ProcessedFiles" folder that is already populated by the results of our experiments.<br />
 Processed outputs are already in the "ProcessedFiles/ProcssedOutput" folder.<br /><br />
 Simply, run the following commands from **./ProcessedFiles folder** to see the graphs we have included in our paper<br/>
-
-	python graph_SG.py 5000 500 small
-	python graph_reward.py 5000 500 small
-	python graph_convergence.py 5000 10
-	
+```
+python graph_SG.py 5000 500 small
+python graph_reward.py 5000 500 small
+python graph_convergence.py 5000 10 small
+```	
 	
 ## Contact
 For questions about the codification or paper, <br />please send an email to mdtamjidh@nevada.unr.edu or aralab2018@gmail.com.
