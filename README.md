@@ -77,9 +77,9 @@ Your output graphs will be stored in "Main/SG.pdf", "Main/Reward.pdf", "Main/Con
 Processed outputs are already in the "ProcessedFiles/ProcssedOutput" folder.<br /><br />
 Simply, run the following commands from **./ProcessedFiles folder** to see the graphs we have included in our paper<br/>
 
-python graph_SG.py 5000 500 small
-python graph_reward.py 5000 500 small
-python graph_convergence.py 5000 20
+	python graph_SG.py 5000 500 small
+	python graph_reward.py 5000 500 small
+	python graph_convergence.py 5000 10
 	
 	
 ## Contact
