@@ -8,7 +8,7 @@ This project was built on Python 3.8. All the experiments are executed in the mo
 ## Abstract
 Cooperative Multiagent Reinforcement Learning (CMARL) has gained popularity in solving complex tasks through cooperation and collaboration of the participating agents in a complex environment. However, since CMARL may involve confidential client information, Differential Privacy (DP) has been proposed to secure it from adversarial inference. Nonetheless, the additional DP-noise creates a new threat for knowledge poisoning attacks in CMARL, which has not been extensively studied in the literature. To address this gap, we propose an adaptive knowledge poisoning technique that an attacker can use to exploit the additional DP-noise, evade state-of-the-art anomaly detection techniques, and prevent optimal convergence of the CMARL model. We evaluate our attack on state-of-the-art anomaly detection approaches in terms of detection accuracy and validation loss. <br />
 
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
+![Fig.1 in the paper showing the basic adversarial manipulation in multiagent learning](https://github.com/aralab-unr/PeLPA/blob/main/poisoning_basic.svg)
 
 
 ## Files
