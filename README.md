@@ -41,10 +41,12 @@ Et: Environment type [small, medium, large] <br />
 
 <br />
 Example:<br />
+
 ```
-python RandomInit.py 15 20 5 2000 10 0.90 20 on 2 random <br />
-python PeLPA.py 15 20 5 2000 10 0.90 20 on 2 random large <br />
-```      
+python RandomInit.py 15 20 5 2000 10 0.90 20 on 2 random
+python PeLPA.py 15 20 5 2000 10 0.90 20 on 2 random large
+```
+
 However, it might take a long time until all the experiments are completed. 
 It may be of interest to run more than one algorithm at the same time if you have enough computing power. 
 Also, note that, for each framework, if the agents do not attain goal within (GridSize*100) steps in a particular episode, the episode and environment will be reset to the next. <br /><br />
@@ -62,17 +64,29 @@ The results (Steps to goal (SG), Rewards, Convergence) of any experiment are sto
     conv_gap = plotting gap between Convergence values<br />
     env_type = environment type [Option: small/medium/large]<br />
 Example: 
-```python processing.py 5000 500 500 20 small``` <br /><br />
+
+```
+python processing.py 5000 500 500 20 small
+```
 
 Your processed output will be stored inside the "Main/ProcessedOutput" folder in .csv format. Example output files are: ProcessedSG.csv, ProcessedReward.csv, ProcessedConvergence.csv<br /><br />
 
 2. Then one-by-one run "Main/graph_SG.py", "Main/graph_reward.py", "Main/graph_convergence.py" through below example steps.<br /><br />
 	a. Open Main/graph_SG.py and edit line 48-55 as per your experiment and graph generation preferences<br />
-	b. run _python graph_SG.py episode_num gap env_type_   (example: _python graph_SG.py 5000 500 small_)<br /><br />
+	b. run _python graph_SG.py episode_num gap env_type_. Example: 
+	```
+	python graph_SG.py 5000 500 small
+	```
 	c. Open Main/graph_reward.py and edit line 49-56 as per your experiment and graph generation preferences<br />
-	d. run _python graph_reward.py episode_num gap env_type_  (example: _python graphGenerator_Reward.py 5000 500 small_)<br /><br />
+	d. run _python graph_reward.py episode_num gap env_type_. Example: 
+	```
+	python graphGenerator_Reward.py 5000 500 small
+	```
 	e. Open Main/graph_convergence.py and edit line 51-58 as per your experiment and graph generation preferences<br />
-	f. run _python graph_convergence.py episode_num gap env_type_   (example: _python graph_convergence.py 5000 20 small_)<br /><br />
+	f. run _python graph_convergence.py episode_num gap env_type_. Example: 
+	```
+	python graph_convergence.py 5000 20 small
+	```
 	
 	
 Your output graphs will be stored in "Main/SG.pdf", "Main/Reward.pdf", "Main/Convergence.pdf" <br /><br />
