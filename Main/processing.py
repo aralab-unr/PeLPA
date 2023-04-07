@@ -86,24 +86,18 @@ for i in range(len(fName)):
         convergenceAvg = [convergenceAvg[x:x+convGap] for x in range(0, len(convergenceAvg),convGap)]
         convergenceAvg = np.mean(np.array(convergenceAvg), axis = 1)
         
-        
-        
-        # ###### TG ####################################################################################
-        with open("./TG/"+str(envType)+"/"+str(fileName)+"_"+str(frameworkName[j])+"_Time", "rb") as Tp:
-            timeVal = pickle.load(Tp)
+    
         
         if frameworkName[j]=='PeLPA':
-            df3["PeLPA"+str(AttackPercentage[i])]=[timeVal]
             df2["PeLPA"+str(AttackPercentage[i])]=convergenceAvg
             df["PeLPA"+str(AttackPercentage[i])]=stepValAvg
             df1["PeLPA"+str(AttackPercentage[i])]=rewardValAvg0
         else:
             print('*Error in processing file*')
             
-df.to_csv("./ProcessedOutput/ProcessedSG.csv", index=False)
-df1.to_csv("./ProcessedOutput/ProcessedReward.csv", index=False)
-df2.to_csv("./ProcessedOutput/ProcessedConvergence.csv", index=False)
-df3.to_csv("./ProcessedOutput/ProcessedTG.csv", index=False)
+df.to_csv("./ProcessedOutput/ProcessedSG_"+str(envType)+".csv", index=False)
+df1.to_csv("./ProcessedOutput/ProcessedReward_"+str(envType)+".csv", index=False)
+df2.to_csv("./ProcessedOutput/ProcessedConvergence_"+str(envType)+".csv", index=False)
 print("Processed files are ready inside the Main/ProcessedOutput folder")
         
             
