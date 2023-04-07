@@ -25,15 +25,16 @@ plt.rcParams['grid.color'] = "#949292"
 plt.rcParams['font.sans-serif'] = "Times New Roman"
 plt.rcParams['font.family'] = "sans-serif"
 legend_properties = {'weight':'bold'}
+plt.rcParams['mathtext.fontset'] = 'cm'
 
 fig = plt.figure(constrained_layout=False,figsize=(8,5))
 gs= GridSpec(1, 1, figure=fig, wspace=0.1, hspace = 0.3)
 ax0 = plt.subplot(gs.new_subplotspec((0, 0)))
 
 axList = [[ax0]]
-ax0.set_xlabel('Episodes (e)')
+ax0.set_xlabel('Episodes, '+str(r"$e$"))
 
-ax0.set_ylabel('Convergence (ΔQ)')
+ax0.set_ylabel('Convergence, '+str(r"$\overline{ΔQ}$"))
 labelList = ['(a)']
 
 episodeNum = int(sys.argv[1])
@@ -44,7 +45,7 @@ envType = sys.argv[3].lower()
 x3 = list(np.linspace(10,episodeNum+10,int(episodeNum/convGap), endpoint=False))
 
 ## Make sure path exists for this one line of code #################################
-df = pd.read_csv("./ProcessedOutput/ProcessedConvergence.csv", delimiter=',')
+df = pd.read_csv("./ProcessedOutput/ProcessedConvergence_"+str(envType)+".csv", delimiter=',')
 ################################################################################
 
 #### Edit these lines according to your experiments and Graph generation preferences #################
@@ -83,7 +84,7 @@ for i in range(len(AttackPercentage)):
 
 
 ## Make sure path exists for this one line of code #################################
-plt.savefig('./Convergence.pdf',bbox_inches='tight') 
+plt.savefig('./Convergence_'+str(envType)+'.pdf',bbox_inches='tight') 
 ################################################################################
 
 plt.show()

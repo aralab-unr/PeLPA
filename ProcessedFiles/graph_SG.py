@@ -26,6 +26,7 @@ plt.rcParams['grid.color'] = "#949292"
 plt.rcParams['font.sans-serif'] = "Times New Roman"
 plt.rcParams['font.family'] = "sans-serif"
 legend_properties = {'weight':'bold'}
+plt.rcParams['mathtext.fontset'] = 'cm'
 
 fig = plt.figure(constrained_layout=False,figsize=(8,5))
 gs= GridSpec(1, 1, figure=fig, wspace=0.1, hspace = 0.3)
@@ -34,8 +35,8 @@ ax0 = plt.subplot(gs.new_subplotspec((0, 0)))
 
 axList = [[ax0]]
 
-ax0.set_xlabel('Episodes (e)')
-ax0.set_ylabel('Average steps (Π)')
+ax0.set_xlabel('Episodes, '+str(r"$e$"))
+ax0.set_ylabel('Avg. steps,'+str(r"$\bar Π$"))
 labelList = ['(a)']
 
 episodeNum = int(sys.argv[1])
@@ -59,7 +60,7 @@ legend = ['PeLPA']
 
 
 ## Make sure path exists for these two line of code #################################
-df = pd.read_csv("./ProcessedOutput/ProcessedSG.csv", delimiter=',')
+df = pd.read_csv("./ProcessedOutput/ProcessedSG_"+str(envType)+".csv", delimiter=',')
 ################################################################################
 
 ### SG #####
@@ -79,9 +80,13 @@ for i in range(len(AttackPercentage)):
         trans = mtransforms.ScaledTranslation(-1/72, 1/72, fig.dpi_scale_trans)
         axList[j][0].text(0.5, -0.35, labelList[j], transform=axList[j][0].transAxes + trans)
         axList[j][0].set_title(str(envType), loc="right" )
+        axList[j][0].set_yscale('log')
+        axList[j][0].yaxis.set_major_formatter(mticker.ScalarFormatter())
+        axList[j][0].yaxis.set_minor_formatter(mticker.ScalarFormatter())
+        axList[j][0].yaxis.set_minor_formatter(mticker.NullFormatter())
 
 ## Make sure path exists for this one line of code #################################
-plt.savefig('./SG.pdf',bbox_inches='tight') 
+plt.savefig('./SG_'+str(envType)+'.pdf',bbox_inches='tight') 
 ################################################################################
 
 plt.show()

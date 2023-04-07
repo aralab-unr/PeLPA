@@ -27,6 +27,7 @@ plt.rcParams['grid.color'] = "#949292"
 plt.rcParams['font.sans-serif'] = "Times New Roman"
 plt.rcParams['font.family'] = "sans-serif"
 legend_properties = {'weight':'bold'}
+plt.rcParams['mathtext.fontset'] = 'cm'
 
 fig = plt.figure(constrained_layout=False,figsize=(8,5))
 gs= GridSpec(1, 1, figure=fig, wspace=0.1, hspace = 0.3)
@@ -35,8 +36,8 @@ ax0 = plt.subplot(gs.new_subplotspec((0, 0)))
 
 axList = [[ax0]]
 
-ax0.set_xlabel('Episodes (e)')
-ax0.set_ylabel('Average reward (Φ)')
+ax0.set_xlabel('Episodes, '+str(r"$e$"))
+ax0.set_ylabel('Avg. reward, '+str(r"$\bar Φ$"))
 labelList = ['(a)']
 
 episodeNum = int(sys.argv[1])
@@ -57,7 +58,7 @@ legend = ['PeLPA']
 ######################################################################################################
 
 ## Make sure path exists for this one line of code #################################
-df1 = pd.read_csv("./ProcessedOutput/ProcessedReward.csv", delimiter=',')
+df1 = pd.read_csv("./ProcessedOutput/ProcessedReward_"+str(envType)+".csv", delimiter=',')
 ################################################################################
 
 
@@ -71,15 +72,20 @@ for i in range(len(AttackPercentage)):
 		axList[j][0].legend(loc ='upper right', #bbox_to_anchor=(0.8, 0.5), #0.25,-1,
 		          ncol=1, fancybox=True, shadow=True,
 		           borderpad=0.2,labelspacing=0.2, handlelength=0.9,columnspacing=0.8,handletextpad=0.3)
-
 		axList[j][0].tick_params(axis='x')
 		axList[j][0].tick_params(axis='y')
+		axList[j][0].set_yscale('log')
+		axList[j][0].yaxis.set_major_formatter(mticker.ScalarFormatter())
+		axList[j][0].yaxis.set_minor_formatter(mticker.ScalarFormatter())
+		axList[j][0].yaxis.set_minor_formatter(mticker.NullFormatter())
 
+        
 		trans = mtransforms.ScaledTranslation(-1/72, 1/72, fig.dpi_scale_trans)
 		axList[j][0].text(0.5, -0.35, labelList[j], transform=axList[j][0].transAxes + trans)
 
+
 ## Make sure path exists for this one line of code #################################
-plt.savefig('./Reward.pdf',bbox_inches='tight') 
+plt.savefig('./Reward_'+str(envType)+'.pdf',bbox_inches='tight') 
 ################################################################################
 plt.show()
 
